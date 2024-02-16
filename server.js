@@ -32,4 +32,10 @@ app.use("/user", userRouter);
 const bookRouter = require("./routers/book.router");
 app.use("/book", bookRouter);
 
-app.listen(3000, () => console.log("Server started"));
+app.listen(3000, (error) => {
+  if (error) {
+    console.log('Error starting server: ', error);
+  } else {
+    console.log('Server started');
+  }
+});
